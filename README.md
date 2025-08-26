@@ -75,3 +75,12 @@ This command will start the Jupyter Notebook server and open a new tab or window
 
 7. To stop the Jupyter Notebook server, go back to the terminal or command prompt where it was launched and press `Ctrl + C`. Confirm by typing `y` and pressing `Enter`.
 
+
+
+## License
+
+Copyright 2025 National Technology & Engineering Solutions of Sandia, LLC (NTESS).
+Under the terms of Contract DE-NA0003525 with NTESS, the U.S. Government retains certain rights in this software.
+
+This project is licensed under the Apache License, Version 2.0. See the `LICENSE.md` file for details.
+
