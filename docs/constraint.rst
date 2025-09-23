@@ -1,5 +1,8 @@
-Cavitation Constraints
+Background
 =======================
+
+Cavitation Constraints
+-----------------------
 
 The minimum pressure coefficient (:math:`C_{p,\text{min}}`) corresponds to the lowest pressure on the blade, typically near the leading edge or suction side, where velocity is highest due to Bernoulli's principle. It is defined as:
 
