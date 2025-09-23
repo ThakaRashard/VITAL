@@ -4,19 +4,54 @@ import matplotlib.pyplot as plt
 plt.style.use('tableau-colorblind10')
 
 class BatteryCharging:
+    """
+    Simulates battery charging using power data and time series.
+
+    Attributes:
+        battery_capacity_kWh (float): Battery capacity in kilowatt-hours.
+        number_of_turbines (int): Number of turbines contributing to power generation.
+        turbulence_intensity (float): Turbulence intensity factor.
+    """
+
     def __init__(self, battery_capacity_kWh, number_of_turbines, turbulence_intensity):
+        """
+        Initialize the BatteryCharging class.
+
+        Args:
+            battery_capacity_kWh (float): Battery capacity in kilowatt-hours.
+            number_of_turbines (int): Number of turbines contributing to power generation.
+            turbulence_intensity (float): Turbulence intensity factor.
+        """
         self.battery_capacity_kWh = battery_capacity_kWh
-        self.battery_capacity_J = battery_capacity_kWh * 3600 * 1000
+        self.battery_capacity_J = battery_capacity_kWh * 3600 * 1000  # Convert kWh to Joules
         self.number_of_turbines = number_of_turbines
         self.turbulence_intensity = turbulence_intensity
         self.instantaneous_power = None
         self.time_series = None
 
     def set_instantaneous_power(self, power_data, time_data):
+        """
+        Set instantaneous power and time series data.
+
+        Args:
+            power_data (list or np.ndarray): Power data in Watts.
+            time_data (list or np.ndarray): Time data in seconds.
+        """
         self.instantaneous_power = np.array(power_data) / (1 + self.turbulence_intensity) ** 3 * self.number_of_turbines
         self.time_series = np.array(time_data)
 
     def chargeBattery_continuous(self, power_electric, time_data, visualise=True):
+        """
+        Simulate continuous battery charging and visualize results.
+
+        Args:
+            power_electric (list or np.ndarray): Power data in Watts.
+            time_data (list or np.ndarray): Time data in seconds.
+            visualise (bool): Whether to visualize the results.
+
+        Returns:
+            tuple: Number of batteries charged and time differences for charging each battery.
+        """
         self.set_instantaneous_power(power_electric, time_data)
 
         cumulative_energy_J = integrate.cumulative_trapezoid(y=self.instantaneous_power, x=self.time_series, initial=0)
@@ -32,12 +67,12 @@ class BatteryCharging:
         wrapped_cumulative_energy_J = cumulative_energy_J % self.battery_capacity_J
         charge_times_hr_diff = np.diff(np.insert(charge_times_hr, 0, 0))
 
-        battery_capacity_Wh = self.battery_capacity_kWh * 1000  # 1 kWh = 1000 Wh
+        battery_capacity_Wh = self.battery_capacity_kWh * 1000  # Convert kWh to Wh
 
         if visualise:
             plt.figure(figsize=(10, 8))
             plt.subplot(2, 1, 1)
-            plt.plot(time_data / (3600 * 24), wrapped_cumulative_energy_J/battery_capacity_Wh)
+            plt.plot(time_data / (3600 * 24), wrapped_cumulative_energy_J / battery_capacity_Wh)
             plt.title(f'Battery Capacity: {self.battery_capacity_kWh} kWh')
             plt.xlabel('Time [days]')
             plt.ylabel('Percentage Charged (%)')
@@ -54,6 +89,17 @@ class BatteryCharging:
         return num_batteries_charged, charge_times_hr_diff
 
     def chargeBattery_perDay(self, power_electric, time_data, visualise=True):
+        """
+        Simulate daily battery charging and visualize results.
+
+        Args:
+            power_electric (list or np.ndarray): Power data in Watts.
+            time_data (list or np.ndarray): Time data in seconds.
+            visualise (bool): Whether to visualize the results.
+
+        Returns:
+            dict: Results including days, time to full charge, cumulative energy, and percent charged.
+        """
         self.set_instantaneous_power(power_electric, time_data)
 
         dt = self.time_series[1] - self.time_series[0]
@@ -66,7 +112,7 @@ class BatteryCharging:
         reshaped_time = np.reshape(time_series_truncated, (-1, lenPerDay))
         reshaped_Pelec = np.reshape(instantaneous_power_truncated, (-1, lenPerDay))
 
-        battery_capacity_Wh = self.battery_capacity_kWh * 1000  # 1 kWh = 1000 Wh
+        battery_capacity_Wh = self.battery_capacity_kWh * 1000  # Convert kWh to Wh
 
         percent_charged_list = []
         time_to_full_charged_list_hr = []

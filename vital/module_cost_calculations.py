@@ -1,6 +1,6 @@
 import numpy as np
-from constUnitConvert import ConstantsUnitConversion
-from unit_weight import UnitWeight  # Import the function from the new file
+from vital.constUnitConvert import ConstantsUnitConversion
+from vital.unit_weight import UnitWeight  # Import the function from the new file
 
 CONVERT = ConstantsUnitConversion()
  

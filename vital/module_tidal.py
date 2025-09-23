@@ -8,8 +8,8 @@ import numpy as np
 from scipy.interpolate import PchipInterpolator
 import pandas as pd
 
-from constGlobal import ConstantsGlobal
-from constUnitConvert import ConstantsUnitConversion
+from vital.constGlobal import ConstantsGlobal
+from vital.constUnitConvert import ConstantsUnitConversion
 
 GLOBAL = ConstantsGlobal()
 CONVERT = ConstantsUnitConversion()

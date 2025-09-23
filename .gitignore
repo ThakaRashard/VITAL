@@ -1,8 +1,9 @@
-# Ignore all .txt and .pdf files in the tutorial folder 
 **/__pycache__/
 **/.ipynb_checkpoints/
-sitkana/
 
+docs/_build/
+
+sitkana/
 
 *.pdf
 *.zip

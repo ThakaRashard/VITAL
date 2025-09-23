@@ -1,4 +1,4 @@
-from module_cost_calculations import (
+from vital.module_cost_calculations import (
     calculate_blade_cost,
     calculate_generator_cost,
     calculate_electrical_cable_cost,
