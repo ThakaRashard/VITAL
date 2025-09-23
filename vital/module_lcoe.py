@@ -1,9 +1,9 @@
 import numpy as np
 import scipy as sp
-from constGlobal import ConstantsGlobal
-from constUnitConvert import ConstantsUnitConversion
-from module_cost_config import COST_FUNCTIONS
-from module_cost_calculations import operating_cost_SITKANA
+from vital.constGlobal import ConstantsGlobal
+from vital.constUnitConvert import ConstantsUnitConversion
+from vital.module_cost_config import COST_FUNCTIONS
+from vital.module_cost_calculations import operating_cost_SITKANA
 
 # Initialize global constants from modules
 GLOBAL = ConstantsGlobal()

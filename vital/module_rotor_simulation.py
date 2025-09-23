@@ -1,8 +1,8 @@
 import numpy as np
-from constGlobal import ConstantsGlobal
+from vital.constGlobal import ConstantsGlobal
 import scipy as sp
 
-from unit_weight import UnitWeight  # Import the function from the new file
+from vital.unit_weight import UnitWeight  # Import the function from the new file
 
 
 class RotorSimulation:

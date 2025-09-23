@@ -1,5 +1,5 @@
 import numpy as np
-from constGlobal import ConstantsGlobal
+from vital.constGlobal import ConstantsGlobal
 GLOBAL = ConstantsGlobal()
 
 class VesselData:
