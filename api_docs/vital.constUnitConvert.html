@@ -1,0 +1,248 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vital.constUnitConvert &mdash; VITAL 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="vital.unit_weight" href="vital.unit_weight.html" />
+    <link rel="prev" title="vital.constGlobal" href="vital.constGlobal.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            VITAL
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../constraint.html">Background</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="vital.html">vital</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vital.constGlobal.html">vital.constGlobal</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">vital.constUnitConvert</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.__new__"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.__new__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.sec2days"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.sec2days</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.mile2m"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.mile2m</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.m2mile"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.m2mile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.m2km"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.m2km</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.W2MW"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.W2MW</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.W2kW"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.W2kW</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.kE2E"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.kE2E</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.N2mTon"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.N2mTon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.N2kN"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.N2kN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.euro2dollar"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.euro2dollar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.ft2m"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.ft2m</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.cms2ms"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.cms2ms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.rads2rpm"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.rads2rpm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.m32cm3"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.m32cm3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion.hrs2days"><code class="docutils literal notranslate"><span class="pre">ConstantsUnitConversion.hrs2days</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vital.unit_weight.html">vital.unit_weight</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">VITAL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="vital.html">vital</a></li>
+      <li class="breadcrumb-item active">vital.constUnitConvert</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-vital.constUnitConvert">
+<span id="vital-constunitconvert"></span><h1>vital.constUnitConvert<a class="headerlink" href="#module-vital.constUnitConvert" title="Link to this heading"></a></h1>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vital.constUnitConvert.ConstantsUnitConversion" title="vital.constUnitConvert.ConstantsUnitConversion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConstantsUnitConversion</span></code></a></p></td>
+<td><p>A singleton class for unit conversion constants.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConstantsUnitConversion</span></span><a class="reference internal" href="../_modules/vital/constUnitConvert.html#ConstantsUnitConversion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A singleton class for unit conversion constants.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.__new__">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__new__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vital/constUnitConvert.html#ConstantsUnitConversion.__new__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.__new__" title="Link to this definition"></a></dt>
+<dd><p>Ensure only one instance of the class exists.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.sec2days">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sec2days</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.sec2days" title="Link to this definition"></a></dt>
+<dd><p>Seconds to days.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.mile2m">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mile2m</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.mile2m" title="Link to this definition"></a></dt>
+<dd><p>Miles to meters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.m2mile">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">m2mile</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.m2mile" title="Link to this definition"></a></dt>
+<dd><p>Meters to miles.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.m2km">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">m2km</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.m2km" title="Link to this definition"></a></dt>
+<dd><p>Meters to kilometers.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.W2MW">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">W2MW</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.W2MW" title="Link to this definition"></a></dt>
+<dd><p>Watts to megawatts.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.W2kW">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">W2kW</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.W2kW" title="Link to this definition"></a></dt>
+<dd><p>Watts to kilowatts.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.kE2E">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kE2E</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.kE2E" title="Link to this definition"></a></dt>
+<dd><p>Kilo euros to euros.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.N2mTon">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">N2mTon</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.N2mTon" title="Link to this definition"></a></dt>
+<dd><p>Newtons to metric tons.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.N2kN">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">N2kN</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.N2kN" title="Link to this definition"></a></dt>
+<dd><p>Newtons to kilonewtons.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.euro2dollar">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">euro2dollar</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.euro2dollar" title="Link to this definition"></a></dt>
+<dd><p>Euros to dollars.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.ft2m">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ft2m</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.ft2m" title="Link to this definition"></a></dt>
+<dd><p>Feet to meters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.cms2ms">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cms2ms</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.cms2ms" title="Link to this definition"></a></dt>
+<dd><p>Centimeters per second to meters per second.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.rads2rpm">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rads2rpm</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.rads2rpm" title="Link to this definition"></a></dt>
+<dd><p>Radians per second to revolutions per minute.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.m32cm3">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">m32cm3</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.m32cm3" title="Link to this definition"></a></dt>
+<dd><p>Cubic meters to cubic centimeters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="vital.constUnitConvert.ConstantsUnitConversion.hrs2days">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hrs2days</span></span><a class="headerlink" href="#vital.constUnitConvert.ConstantsUnitConversion.hrs2days" title="Link to this definition"></a></dt>
+<dd><p>Hours to days.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vital.constGlobal.html" class="btn btn-neutral float-left" title="vital.constGlobal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vital.unit_weight.html" class="btn btn-neutral float-right" title="vital.unit_weight" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, National Technology &amp; Engineering Solutions of Sandia, LLC (NTESS). Under the terms of Contract DE-NA0003525 with NTESS, the U.S. Government retains certain rights in this software..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
